@@ -24,6 +24,10 @@ class EmailValidator {
 
         if(!emailValidator.isEmpty() && emailValidator.isValid()) {
             console.log("Email valid");
+            window.location.href = "../success_subscribing/success_subscribing.html";
+            localStorage.setItem("userEmail", inputElement.value);
+
+            successMessage.textContent(`A confirmation email has been sent to ${inputElement.value}. Please open it and click the button inside to confirm your subscription.`)
             return true;
         } else {
             console.log("Invalid email!")
@@ -50,3 +54,4 @@ validateButton.addEventListener("click", (event) => {
     event.preventDefault();
     EmailValidator.validationInput(emailInput);
 });
+
